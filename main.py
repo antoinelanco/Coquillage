@@ -1,36 +1,30 @@
 bc = []
-# mvt 1
-move = [1,2,100]
-bc.append (move)
-# mvt 2
-move = [1,2,100]
-bc.append (move)
-# mvt 3
-move = [3,1,500]
-bc.append(move)
+users = {"user0":1000}
 
+move = ["user0","user1",100]
+bc.append (move)
 
-# amount user1
-amount = 0
+move = ["user0","user2",50]
+bc.append (move)
+
+move = ["user0","user3",300]
+bc.append (move)
+
+move = ["user3","user4",250]
+bc.append (move)
+
+print bc
+
 for value in bc:
-    if value[0] == 1:
-        amount -= value[2]
-    elif value[1] == 1:
-        amount += value[2]
-print amount
-# amount user2
-amount = 0
-for value in bc:
-    if value[0] == 2:
-        amount -= value[2]
-    elif value[1] == 2:
-        amount += value[2]
-print amount
-# amount user3
-amount = 0
-for value in bc:
-    if value[0] == 3:
-        amount -= value[2]
-    elif value[1] == 3:
-        amount += value[2]
-print amount
+    list = (0,1)
+    for i in list:
+        if not users.get(value[i]):
+            print "On genere le " + value[i]
+            users[value[i]] = 0
+            print users
+    # effectue la transaction
+    users[value[0]] -= value[2]
+    users[value[1]] += value[2]
+
+for key, value in users.items():
+    print key + " get " + str(value) + " coquillages"
