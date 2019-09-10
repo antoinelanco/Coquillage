@@ -21,10 +21,10 @@ for value in bc:
         if not users.get(value[i]):
             print "On genere le " + value[i]
             users[value[i]] = 0
-            print users
     # effectue la transaction
     users[value[0]] -= value[2]
     users[value[1]] += value[2]
+    print users
 
 for key, value in users.items():
     print key + " get " + str(value) + " coquillages"
