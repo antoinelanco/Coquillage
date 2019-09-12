@@ -6,6 +6,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def api_root():
+    bc = open("bc",'r')
+    print(bc)
+
     dico = {"Bonjour":"Moi"}
     js = json.dumps(dico)
     resp = Response(js, status=200 , mimetype='application/json')
