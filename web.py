@@ -6,7 +6,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def api_root():
-    return "Welcome"
+    dico = {"Bonjour":"Moi"}
+    js = json.dumps(dico)
+    resp = Response(js, status=200 , mimetype='application/json')
+    return resp
 
 if __name__ == '__main__':
 	app.run("192.168.1.43")
