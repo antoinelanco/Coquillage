@@ -1,13 +1,25 @@
 #! /usr/bin/env python3
 import block
 
+
+
+def add_dict(dict,key,value):
+    if not key in dict:
+        dict[key] = 0
+    dict[key] += value
+
+def sub_dict(dict,key,value):
+    if not key in dict:
+        dict[key] = 0
+    dict[key] -= value
+
 def amount(bc):
     users = {}
     for v in bc:
+        add_dict(users,v[1],v[2])
+        sub_dict(users,v[0],v[2])
 
-        if not v[1] in users:
-            users[v[1]] = 0
-        users[v[1]] += v[2]
+
 
 
     print(users)
@@ -54,5 +66,5 @@ bc.append (move)
 move = ["user4","user5",250]
 bc.append (move)
 
-print(bc)
+# print(bc)
 amount(bc)
