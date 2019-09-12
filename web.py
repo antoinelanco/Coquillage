@@ -15,4 +15,4 @@ def api_root():
     return resp
 
 if __name__ == '__main__':
-	app.run("192.168.1.43")
+	app.run("192.168.1.43",debug=True)
